@@ -20,14 +20,43 @@
 \usepackage{listings}
 \usepackage{dsfont}
 \usepackage{amsmath}
-\usepackage{changes}
 
+\usepackage[dvipsnames,svgnames,x11names]{xcolor}
+
+%--------------------------------------------
+% Relative to the changes package
+%--------------------------------------------
+\usepackage[markup=underlined]{changes}
+%% Use "final" option to remove all tracking markups
+% \usepackage[final]{changes}
+
+
+\definechangesauthor[color=green]{AT}
+\definechangesauthor[color=BrickRed]{AG}
+\definechangesauthor[color=NavyBlue]{NMC}
+
+%%% Alternative definition to have the remarks
+%%% in the margins instead of footnotes
+\usepackage{todonotes}
+\setlength{\marginparwidth}{3cm}
+\makeatletter
+\setremarkmarkup{\todo[color=Changes@Color#1!20,size=\scriptsize]{#1: #2}}
+\makeatother
+
+%% Rather hacky definition of a plain remark/note
+%% by riding on \added
+\newcommand{\note}[2][]{\added[#1,remark={#2}]{}}
+
+%--------------------------------------------
+% End of changes package specifications
+%--------------------------------------------
+
+\title{The Sir Ivan Fire: observed pyroCb formation and features, ground-plume coupling and coldfront impact - Article Frame}
+\author{Alex Terrasson}
 
 \begin{document}
-\title{The Sir Ivan Fire: observed pyroCb formation and features, ground-plume coupling and coldfront impact - Article Frame}
 
 \maketitle
-
 
 \section{Abstract}
 
@@ -38,8 +67,8 @@ Points to be covered:
 \item Context and objectives
 \begin{itemize}
 \item Extreme fire with pyroCb generation with a lot of observations: good case study
-\item Focus of the study: We apply known methods (uss of doppler radar to get axial/absolute doppler velocity and turbulence) to a different kid of plume: a pyroCb
-\item focusing on plume study, the goal is to generalize to some extent what kind of turbulence/vorticity can be expected in a pyroCb.
+\item What new feature this article brings: We apply known methods (use of doppler radar to get axial/absolute doppler velocity and turbulence) to a different kind of plume: a pyroCb
+\item We will be focusing on plume study, the goal is to generalize to some extent what kind of turbulence/vorticity can be expected in a pyroCb.
 \end{itemize}
 
 \item State of the art:
@@ -151,16 +180,16 @@ What is the part of the pyroCb ? what is the part of the coldfront ? can some ot
 
 \begin{figure}[position]
    \caption{\label{ground_fire} Fire spread during the event (main), area burnt and FRP over time (bottom right).   {\color{red} Note: the point of this figure is to show the massive increase in area and FRP on sunday. The graph does not display the right information yet (I m waiting for the ground data from the NFS)} }
-   \includegraphics[width=\textwidth]{figures/ground_fire.png}
+   \includegraphics[width=\textwidth]{../figures/ground_fire.png}
 \end{figure}
 
 \begin{figure}[position]
    \caption{\label{3steps} Evolution of the plume on sunday. The each column corresponds to a time step: the first is 15:00pm, before the pyroCb, the second is 17:00, after the apparition of the pyroCb and during the coldfront passage, the last columns corresponds to 18:10pm, after the coldfront passage. The first line shows the visible Himawari view, and the two other rows the reflectivity signature for 0.5 and 1.8 degree of elevation.   {\color{red} Note: the point of this figure is to show the plume evolution: first a soft expansion to the south-east, then the apparition of the pyroCb, and finally the coldfront creating a new expansion to the north east, but only at low level} }
-   \includegraphics[width=\textwidth]{figures/3main_steps.png}
+   \includegraphics[width=\textwidth]{../figures/3main_steps.png}
 \end{figure}
 
 \begin{figure}[position]
    \caption{\label{tur_vel} Axial Doppler velocity and turbulence field at four time steps: 15:40, before the apparition of the pyroCb ; 17:00, during the pyroCb event, and at the begining of the large vortices signatures and the move of the maximum of turbulence toward the centre ; 17:50 and 18:10 with the motion toward south east of the large vortex. {\color{red} note: the point of this figure is to show The apparition and the development of the vortexes and the turbulence displacement. An interesting featur is that the vortex doesn't follow the coldfront wind direction, but the mid level wind direction. So I m considering adding another radar elevation to show that the same signature on vortex and turbulence are present as well} }
-   \includegraphics[width=\textwidth]{figures/vel_turb.png}
+   \includegraphics[width=\textwidth]{../figures/vel_turb.png}
 \end{figure}
 \end{document}
